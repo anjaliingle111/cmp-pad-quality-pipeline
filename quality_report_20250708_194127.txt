@@ -1,0 +1,27 @@
+
+                ================================
+                CMP Pad Quality Report
+                Generated: 2025-07-08 19:41:27
+                ================================
+                Total Records (All Time): 12270
+                Records (Last Hour): 970
+                Faulty Records: 114
+                Fault Rate: 11.75%
+                
+                Average Measurements:
+                - Thickness: 1.0050 mm
+                - Pressure: 5.0494 psi
+                - Temperature: 27.5229 °C
+                - Rotation Speed: 125.8551 RPM
+                
+                Quality Analysis:
+                - Normal Operations: 856 pads
+                - Faulty Operations: 114 pads
+                - Success Rate: 88.25%
+                
+                System Performance:
+                - Pipeline Status: HEALTHY
+                - Data Flow: ACTIVE
+                - Last Updated: 2025-07-08 19:41:27
+                ================================
+                

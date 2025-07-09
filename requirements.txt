@@ -1,0 +1,5 @@
+kafka-python==2.0.2
+psycopg2-binary==2.9.9
+pandas==2.0.3
+sqlalchemy==1.4.49
+astro-run-dag # This package is needed for the astro run command. It will be removed before a deploy
