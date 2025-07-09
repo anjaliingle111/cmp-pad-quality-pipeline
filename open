@@ -1,0 +1,82 @@
+🚀 Complete Demo Setup Commands
+Step 1: Start PostgreSQL (Copy-Paste)
+powershell# Start PostgreSQL service
+Start-Service -Name "postgresql-x64-15"
+
+# Verify it's running (should show "Running")
+Get-Service -Name "postgresql-x64-15"
+
+# Test connection (should show "TcpTestSucceeded : True")
+Test-NetConnection -ComputerName localhost -Port 5432
+Step 2: Navigate to Project Directory
+powershell# Go to project folder
+cd "C:\Users\Anjali\cmp-pad-quality-pipeline-astro"
+Step 3: Start API Server (Keep this window open)
+powershell# Start the API server
+python dashboard_api.py
+✅ Expected Output:
+Model loaded successfully.
+Starting CMP Quality Dashboard API...
+Dashboard available at: http://localhost:8000
+INFO:     Started server process [xxxx]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Step 4: Open Dashboard (New PowerShell Window)
+powershell# Navigate to project directory
+cd "C:\Users\Anjali\cmp-pad-quality-pipeline-astro"
+
+# Open dashboard with full path
+$fullPath = (Get-Location).Path + "\cmp_dashboard.html"
+Start-Process $fullPath
+✅ Expected Result: Dashboard opens in your browser with form fields
+🎯 Demo Test Cases (Copy-Paste)
+Test Case 1: Excellent Quality (95-100%)
+Pad ID: DEMO_EXCELLENT_001
+Pressure: 5.2
+Temperature: 24.8
+Rotation Speed: 105.0
+Polish Time: 58.5
+Slurry Flow Rate: 215.0
+Pad Conditioning: Yes
+Head Force: 11.2
+Back Pressure: 2.1
+Pad Age: 25
+Material Type: Copper (Cu)
+Test Case 2: Faulty Quality (30-50%)
+Pad ID: DEMO_FAULTY_001
+Pressure: 3.5
+Temperature: 35.0
+Rotation Speed: 70.0
+Polish Time: 80.0
+Slurry Flow Rate: 150.0
+Pad Conditioning: No
+Head Force: 7.5
+Back Pressure: 3.5
+Pad Age: 95
+Material Type: Tungsten (W)
+🔧 Quick Troubleshooting Commands
+If PostgreSQL won't start:
+powershell# Stop any conflicting processes
+Stop-Process -Name "postgres" -Force -ErrorAction SilentlyContinue
+
+# Start manually
+& "C:\Program Files\PostgreSQL\15\bin\pg_ctl.exe" -D "C:\Program Files\PostgreSQL\15\data" start
+
+# Test again
+Test-NetConnection -ComputerName localhost -Port 5432
+If API won't start (port conflict):
+powershell# Check what's using port 8000
+netstat -ano | findstr :8000
+
+# Kill the process (replace XXXX with actual PID)
+Stop-Process -Id XXXX -Force
+
+# Start API again
+python dashboard_api.py
+If dashboard won't open:
+powershell# Alternative method
+Invoke-Item "cmp_dashboard.html"
+
+# Or use specific browser
+Start-Process "chrome.exe" "C:\Users\Anjali\cmp-pad-quality-pipeline-astro\cmp_dashboard
