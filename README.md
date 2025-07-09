@@ -4,7 +4,7 @@ A complete machine learning pipeline for Chemical Mechanical Planarization (CMP)
 
 ## 🔬 Features
 
-- **Real-time Quality Predictions**: ML-powered predictions with 100% accuracy on test data
+- **Real-time Quality Predictions**: ML-powered predictions with 88.2% accuracy on real manufacturing data
 - **Visual Dashboard**: Interactive web interface with charts and metrics
 - **Database Integration**: PostgreSQL database for storing quality and process data
 - **Incremental Learning**: Model updates with new data automatically
